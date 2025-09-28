@@ -114,6 +114,20 @@
   hardware.graphics.enable = true;
 
   specialisation = {
+    Joshua-PC = {
+      inheritParentConfig = true;
+      configuration = {
+        hardware.nvidia = {
+          modesetting.enable = true;
+          powerManagement.enable = false;
+          powerManagement.finegrained = false;
+          open = false;
+          nvidiaSettings = true;
+        };
+        services.xserver.videoDrivers = [ "nvidia" ];
+      };
+    };
+
     JBaker-LT = {
       inheritParentConfig = true;
       configuration = {
